@@ -17,7 +17,8 @@ git clone --depth 1 https://github.com/sdkbox/sdkbox-sample-appodeal.git
 # eg: cpp and ios
 ./sdkbox-cocos2d-x-binary/run_sample.sh appodeal cpp ios
 # javascript and android
-./sdkbox-cocos2d-x-binary/run_sample.sh appodeal js android
+# make sure append argument "org.cocos2dx.appodeal" run on android
+./sdkbox-cocos2d-x-binary/run_sample.sh appodeal js android org.cocos2dx.appodeal
 
 # <optional> if exists "download-depends.sh" in sample repo, execute it
 # ./sdkbox-sample-appodeal/download-depends.sh

@@ -119,7 +119,9 @@ namespace sdkbox {
             AppodealShowStyleRewardedVideo,
 
             AppodealShowStyleVideo = AppodealShowStyleSkippableVideo, // deprecated use AppodealShowStyleSkippableVideo
-            AppodealShowStyleNonSkippableVideo = AppodealShowStyleRewardedVideo
+            AppodealShowStyleNonSkippableVideo = AppodealShowStyleRewardedVideo,
+            
+            UNKNOWN_STYLE
         } ShowStyle;
 
         typedef enum {

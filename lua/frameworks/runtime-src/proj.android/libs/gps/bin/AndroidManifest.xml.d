@@ -1,2 +1,2 @@
-/Users/cocos/.jenkins/jobs/release_2.0.3/workspace/extern/plugins/googleplayservices/googleplayservices/plugin/gps/bin/AndroidManifest.xml : \
-/Users/cocos/.jenkins/jobs/release_2.0.3/workspace/extern/plugins/googleplayservices/googleplayservices/plugin/gps/AndroidManifest.xml \
+/Users/tinybearc/Desktop/Works/sdkbox-sample-appodeal/lua/frameworks/runtime-src/proj.android/libs/gps/bin/AndroidManifest.xml : \
+/Users/tinybearc/Desktop/Works/sdkbox-sample-appodeal/lua/frameworks/runtime-src/proj.android/libs/gps/AndroidManifest.xml \

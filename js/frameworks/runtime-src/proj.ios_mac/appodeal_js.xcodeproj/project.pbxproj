@@ -34,6 +34,7 @@
 		498B452C9E98B6E14A9B86D2 /* script */ = {isa = PBXBuildFile; fileRef = 671A491884E0C7533ED0085C /* script */; };
 		4B054EF6A150D89A98A00871 /* vg_privacy.png */ = {isa = PBXBuildFile; fileRef = 30644CA3A2BC56B9B5323E55 /* vg_privacy.png */; };
 		4D454A4F87D8462B7C47D5E7 /* MPUnmutedBtn@2x.png */ = {isa = PBXBuildFile; fileRef = E84949B69BB26318F50B5A97 /* MPUnmutedBtn@2x.png */; };
+		4FEE40D789CF5416090C8F37 /* appodeal_mute_on.png */ = {isa = PBXBuildFile; fileRef = A5CD4C1DBB2FEBE839A0B10F /* appodeal_mute_on.png */; };
 		5091731A17ECDF7A00D62437 /* Icon-29.png */ = {isa = PBXBuildFile; fileRef = 5091731417ECDF7A00D62437 /* Icon-29.png */; };
 		5091731B17ECDF7A00D62437 /* Icon-40.png */ = {isa = PBXBuildFile; fileRef = 5091731517ECDF7A00D62437 /* Icon-40.png */; };
 		5091731C17ECDF7A00D62437 /* Icon-50.png */ = {isa = PBXBuildFile; fileRef = 5091731617ECDF7A00D62437 /* Icon-50.png */; };
@@ -98,6 +99,7 @@
 		C03780EB18BEE0E400FE4F13 /* src */ = {isa = PBXBuildFile; fileRef = C03780EA18BEE0E400FE4F13 /* src */; };
 		C05D1C171923467600B808A4 /* config.json */ = {isa = PBXBuildFile; fileRef = C05D1C161923467600B808A4 /* config.json */; };
 		C0799CB918BAE62000E9C828 /* res */ = {isa = PBXBuildFile; fileRef = C0799CB518BAE62000E9C828 /* res */; };
+		C0CD4F6389226949C107B817 /* appodeal_mute_off.png */ = {isa = PBXBuildFile; fileRef = 8F244F37B6AC3A74531F6223 /* appodeal_mute_off.png */; };
 		C192489A97DD1B5F352B18A9 /* appodeal_pattern.png */ = {isa = PBXBuildFile; fileRef = 135A4EFA8AD4AFF333C2E5FA /* appodeal_pattern.png */; };
 		C33742EF97E7CCC3A5CE089A /*  */ = {isa = PBXBuildFile; fileRef = 8DE947579713D52582BED523 /*  */; };
 		C6D24A5BB4D0CAAFB1B17A25 /* MPCloseButtonX.png */ = {isa = PBXBuildFile; fileRef = B37D479AAF9AB7154C5C2CA1 /* MPCloseButtonX.png */; };
@@ -199,6 +201,7 @@
 		829E420D8CEC0E481D1CEB8B /*  */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = ""; path = plugin_appodeal_res_bundle/RFMAdSDK.bundle/; sourceTree = SOURCE_ROOT; };
 		87D4C4441AB2187000F68C44 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		8DE947579713D52582BED523 /*  */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = ""; path = plugin_appodeal_res_bundle/UnityAds.bundle/; sourceTree = SOURCE_ROOT; };
+		8F244F37B6AC3A74531F6223 /* appodeal_mute_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appodeal_mute_off.png; path = plugin_appodeal_res_bundle/appodeal_mute_off.png; sourceTree = SOURCE_ROOT; };
 		91A840E5AA1D20240AF9C952 /* Appodeal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Appodeal.framework; path = Appodeal.framework; sourceTree = SOURCE_ROOT; };
 		92F442CDA9523D2486785392 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		979D4F30851F0DA0F167EE25 /* PluginAppodealJS.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginAppodealJS.hpp; path = ../Classes/PluginAppodealJS.hpp; sourceTree = SOURCE_ROOT; };
@@ -213,6 +216,7 @@
 		9FFEB9A71A6AB7F70095C43A /* js_module_register.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = js_module_register.h; sourceTree = "<group>"; };
 		9FFEB9C01A6B86360095C43A /* SimpleConfigParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleConfigParser.cpp; sourceTree = "<group>"; };
 		9FFEB9C11A6B86360095C43A /* SimpleConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleConfigParser.h; sourceTree = "<group>"; };
+		A5CD4C1DBB2FEBE839A0B10F /* appodeal_mute_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appodeal_mute_on.png; path = plugin_appodeal_res_bundle/appodeal_mute_on.png; sourceTree = SOURCE_ROOT; };
 		A922753D1517C094001B78AA /* appodeal_js-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = appodeal_js-mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92275411517C094001B78AA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A92275431517C094001B78AA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -495,6 +499,8 @@
 				8DE947579713D52582BED523 /*  */,
 				09834810B533A002B58AAA66 /* InfoPlist.strings */,
 				D1A94FCFACCD04A7F948ED25 /* TOWebViewControllerLocalizable.strings */,
+				A5CD4C1DBB2FEBE839A0B10F /* appodeal_mute_on.png */,
+				8F244F37B6AC3A74531F6223 /* appodeal_mute_off.png */,
 			);
 			name = plugin_appodeal_res_bundle;
 			path = plugin_appodeal_res_bundle/;
@@ -652,6 +658,8 @@
 				C33742EF97E7CCC3A5CE089A /*  */,
 				DF5F4B808FD42D29E717F176 /* InfoPlist.strings */,
 				F9EE48B180686E6599AF1623 /* TOWebViewControllerLocalizable.strings */,
+				4FEE40D789CF5416090C8F37 /* appodeal_mute_on.png */,
+				C0CD4F6389226949C107B817 /* appodeal_mute_off.png */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
