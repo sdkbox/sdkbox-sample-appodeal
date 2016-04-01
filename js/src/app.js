@@ -89,42 +89,43 @@ var HelloWorldLayer = cc.Layer.extend({
         var AppodealShowStyleVideo = AppodealShowStyleSkippableVideo; // deprecated use AppodealShowStyleSkippableVideo
         var AppodealShowStyleNonSkippableVideo = AppodealShowStyleRewardedVideo;
 
-        menu.addChild(cc.MenuItemLabel.create(cc.Label.createWithSystemFont("show ad Interstitial", "sans", 24), function() {
+
+        menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad Interstitial", "sans", 28), function() {
             cc.log("show ad Interstitial");
             sdkbox.PluginAppodeal.showAd(AppodealShowStyleInterstitial);
         }));
 
-        menu.addChild(cc.MenuItemLabel.create(cc.Label.createWithSystemFont("show ad SkippableVideo", "sans", 24), function() {
+        menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad SkippableVideo", "sans", 24), function() {
             cc.log("show ad SkippableVideo");
             sdkbox.PluginAppodeal.showAd(AppodealShowStyleSkippableVideo);
         }));
 
-        menu.addChild(cc.MenuItemLabel.create(cc.Label.createWithSystemFont("show ad VideoOrInterstitial", "sans", 24), function() {
+        menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad VideoOrInterstitial", "sans", 24), function() {
             cc.log("show ad VideoOrInterstitial");
             sdkbox.PluginAppodeal.showAd(AppodealShowStyleVideoOrInterstitial);
         }));
 
-        menu.addChild(cc.MenuItemLabel.create(cc.Label.createWithSystemFont("show ad BannerTop", "sans", 24), function() {
+        menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad BannerTop", "sans", 24), function() {
             cc.log("show ad BannerTop");
             sdkbox.PluginAppodeal.showAd(AppodealShowStyleBannerTop);
         }));
 
-        menu.addChild(cc.MenuItemLabel.create(cc.Label.createWithSystemFont("show ad BannerCenter", "sans", 24), function() {
+        menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad BannerCenter", "sans", 24), function() {
             cc.log("show ad BannerCenter");
             sdkbox.PluginAppodeal.showAd(AppodealShowStyleBannerCenter);
         }));
 
-        menu.addChild(cc.MenuItemLabel.create(cc.Label.createWithSystemFont("show ad BannerBottom", "sans", 24), function() {
+        menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad BannerBottom", "sans", 24), function() {
             cc.log("show ad BannerBottom");
             sdkbox.PluginAppodeal.showAd(AppodealShowStyleBannerBottom);
         }));
 
-        menu.addChild(cc.MenuItemLabel.create(cc.Label.createWithSystemFont("show ad RewardedVideo", "sans", 24), function() {
+        menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad RewardedVideo", "sans", 24), function() {
             cc.log("show ad RewardedVideo");
             sdkbox.PluginAppodeal.showAd(AppodealShowStyleRewardedVideo);
         }));
 
-        menu.addChild(cc.MenuItemLabel.create(cc.Label.createWithSystemFont("show ad NonSkippableVideo", "sans", 24), function() {
+        menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad NonSkippableVideo", "sans", 24), function() {
             cc.log("show ad NonSkippableVideo");
             sdkbox.PluginAppodeal.showAd(AppodealShowStyleNonSkippableVideo);
         }));
