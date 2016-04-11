@@ -1,5 +1,5 @@
 
-# How to run sdkbox samples
+# How to run sdkbox appodeal samples
 
 Steps:
 
@@ -19,8 +19,8 @@ git clone --depth 1 https://github.com/sdkbox/sdkbox-sample-appodeal.git
 # javascript and android
 ./sdkbox-cocos2d-x-binary/run_sample.sh appodeal js android
 
-# <optional> if exists "download-depends.sh" in sample repo, execute it
-# ./sdkbox-sample-appodeal/download-depends.sh
+# run "download-depends.sh" in sample repo
+./sdkbox-sample-appodeal/download-depends.sh
 
 ~~~
 
