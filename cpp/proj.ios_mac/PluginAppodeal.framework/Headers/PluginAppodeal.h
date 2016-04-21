@@ -1,6 +1,6 @@
 /****************************************************************************
 
- Copyright (c) 2014-2015 SDKBOX Inc
+ Copyright (c) 2014-2016 SDKBOX Inc
 
  ****************************************************************************/
 
@@ -120,7 +120,7 @@ namespace sdkbox {
 
             AppodealShowStyleVideo = AppodealShowStyleSkippableVideo, // deprecated use AppodealShowStyleSkippableVideo
             AppodealShowStyleNonSkippableVideo = AppodealShowStyleRewardedVideo,
-            
+
             UNKNOWN_STYLE
         } ShowStyle;
 
