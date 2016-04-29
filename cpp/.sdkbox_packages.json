@@ -11,7 +11,7 @@
             "verbose": 0, 
             "forcecopy": 1, 
             "command": "update", 
-            "nohelp": 0, 
+            "nohelp": 1, 
             "server": "download.sdkbox.com/installer/v1/", 
             "manifest": "manifest.json", 
             "project": "./", 
@@ -25,15 +25,15 @@
         }, 
         "version": [
             2, 
-            1, 
-            3, 
-            3
+            2, 
+            0, 
+            13
         ], 
         "result": "ok", 
         "message": "success", 
         "constants": {
             "ANDROID_STUDIO_JNI_DIR": "n/a", 
-            "COCOS_BACKUP_DIR": "backup-2016-04-21-1/", 
+            "COCOS_BACKUP_DIR": "backup-2016-04-29-1/", 
             "COCOS_PROJECT_DIR": "./", 
             "COCOS_2DX_INSTALLATION_VERSION": "3.8.0", 
             "ANDROID_COCOS_PACKAGE_ROOT": "proj.android/", 
@@ -81,7 +81,7 @@
             "verbose": 0, 
             "forcecopy": 1, 
             "command": "update", 
-            "nohelp": 0, 
+            "nohelp": 1, 
             "server": "download.sdkbox.com/installer/v1/", 
             "manifest": "manifest.json", 
             "project": "./", 
@@ -95,15 +95,15 @@
         }, 
         "version": [
             2, 
-            1, 
-            3, 
-            3
+            2, 
+            0, 
+            13
         ], 
         "result": "ok", 
         "message": "success", 
         "constants": {
             "ANDROID_STUDIO_JNI_DIR": "n/a", 
-            "COCOS_BACKUP_DIR": "backup-2016-04-21-1/", 
+            "COCOS_BACKUP_DIR": "backup-2016-04-29-1/", 
             "COCOS_PROJECT_DIR": "./", 
             "COCOS_2DX_INSTALLATION_VERSION": "3.8.0", 
             "ANDROID_COCOS_PACKAGE_ROOT": "proj.android/", 
@@ -113,9 +113,7 @@
                 "android-support-v4-22.2.1.jar", 
                 "appodeal-1.14.9.jar", 
                 "inmobi-5.2.1.jar", 
-                "yandex-metrica-2.30.jar", 
-                "unity-ads-1.4.7.jar", 
-                "android-support-v7-recyclerview-22.2.1.jar"
+                "yandex-metrica-2.30.jar"
             ], 
             "google_play_services": "proj.android/libs/gps/", 
             "ANDROID_STUDIO_ACTIVITY_NAME": "n/a", 
