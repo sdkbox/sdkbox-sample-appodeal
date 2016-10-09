@@ -1,33 +1,33 @@
 #include "PluginAppodealJSHelper.h"
-#include "cocos2d_specifics.hpp"
 #include "PluginAppodeal/PluginAppodeal.h"
 #include "SDKBoxJSHelper.h"
 
 extern JSObject* jsb_sdkbox_PluginAppodeal_prototype;
 static JSContext* s_cx = nullptr;
 
-class ADCallbackJS: public cocos2d::CCObject {
+#if (COCOS2D_VERSION < 0x00030000)
+#define Ref CCObject
+#define Director CCDirector
+#define getInstance sharedDirector
+#define schedule scheduleSelector
+#endif
+
+class ADCallbackJS: public cocos2d::Ref {
 public:
     ADCallbackJS();
     void schedule();
     void notityJs(float dt);
 
     std::string _name;
-    
+
     jsval _paramVal[2];
     int _paramLen;
 };
 
-class AppodealListenerJS : public sdkbox::AppodealListener {
-private:
-    JSObject* _JSDelegate;
+class AppodealListenerJS : public sdkbox::AppodealListener, public sdkbox::JSListenerBase
+{
 public:
-    void setJSDelegate(JSObject* delegate) {
-        _JSDelegate = delegate;
-    }
-
-    JSObject* getJSDelegate() {
-        return _JSDelegate;
+    AppodealListenerJS():sdkbox::JSListenerBase() {
     }
 
     void onBannerDidLoadAd() {
@@ -134,28 +134,28 @@ public:
         cb->schedule();
         cb->autorelease();
     }
-    
+
     void onRewardVideoDidFailToLoadAd() {
         ADCallbackJS* cb = new ADCallbackJS();
         cb->_name = "onRewardVideoDidFailToLoadAd";
         cb->schedule();
         cb->autorelease();
     }
-    
+
     void onRewardVideoDidPresent() {
         ADCallbackJS* cb = new ADCallbackJS();
         cb->_name = "onRewardVideoDidPresent";
         cb->schedule();
         cb->autorelease();
     }
-    
+
     void onRewardVideoWillDismiss() {
         ADCallbackJS* cb = new ADCallbackJS();
         cb->_name = "onRewardVideoWillDismiss";
         cb->schedule();
         cb->autorelease();
     }
-    
+
     void onRewardVideoDidFinish(int amount, const std::string& name) {
         JSContext* cx = s_cx;
 
@@ -174,7 +174,7 @@ public:
         }
         JSContext* cx = s_cx;
         const char* func_name = func;
-        JS::RootedObject obj(cx, _JSDelegate);
+        JS::RootedObject obj(cx, getJSDelegate());
         JSAutoCompartment ac(cx, obj);
 
 #if defined(MOZJS_MAJOR_VERSION)
@@ -225,7 +225,7 @@ _paramLen(0) {
 
 void ADCallbackJS::schedule() {
     retain();
-    cocos2d::CCDirector::sharedDirector()->getScheduler()->scheduleSelector(schedule_selector(ADCallbackJS::notityJs), this, 0.1, false);
+    cocos2d::Director::getInstance()->getScheduler()->schedule(schedule_selector(ADCallbackJS::notityJs), this, 0.1, 0, 0.0f, false);
 }
 
 void ADCallbackJS::notityJs(float dt) {
@@ -234,7 +234,6 @@ void ADCallbackJS::notityJs(float dt) {
     if (l) {
         l->invokeJS(_name.c_str(), _paramVal, _paramLen);
     }
-    cocos2d::CCDirector::sharedDirector()->getScheduler()->unscheduleAllForTarget(this);
     release();
 }
 
@@ -259,11 +258,10 @@ JSBool js_PluginAppodealJS_PluginAppodeal_setListener(JSContext *cx, uint32_t ar
         {
             ok = false;
         }
-        JSObject *tmpObj = args.get(0).toObjectOrNull();
 
         JSB_PRECONDITION2(ok, cx, false, "js_PluginAppodealJS_PluginAppodeal_setIAPListener : Error processing arguments");
         AppodealListenerJS* wrapper = new AppodealListenerJS();
-        wrapper->setJSDelegate(tmpObj);
+        wrapper->setJSDelegate(args.get(0));
         sdkbox::PluginAppodeal::setListener(wrapper);
 
         args.rval().setUndefined();

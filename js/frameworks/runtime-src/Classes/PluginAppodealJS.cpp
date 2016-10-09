@@ -1,5 +1,4 @@
 #include "PluginAppodealJS.hpp"
-#include "cocos2d_specifics.hpp"
 #include "PluginAppodeal/PluginAppodeal.h"
 #include "SDKBoxJSHelper.h"
 #include "sdkbox/Sdkbox.h"
@@ -22,7 +21,7 @@ static bool dummy_constructor(JSContext *cx, uint32_t argc, jsval *vp) {
         typeClass = typeMapIter->second;
         CCASSERT(typeClass, "The value is null.");
 
-#if (COCOS2D_VERSION >= 0x00031000)
+#if (SDKBOX_COCOS_JSB_VERSION >= 2)
         JS::RootedObject proto(cx, typeClass->proto.ref());
         JS::RootedObject parent(cx, typeClass->parentProto.ref());
 #else
@@ -30,7 +29,7 @@ static bool dummy_constructor(JSContext *cx, uint32_t argc, jsval *vp) {
         JS::RootedObject parent(cx, typeClass->parentProto.get());
 #endif
         JS::RootedObject _tmp(cx, JS_NewObject(cx, typeClass->jsclass, proto, parent));
-        
+
         T* cobj = new T();
         js_proxy_t *pp = jsb_new_proxy(cobj, _tmp);
         AddObjectRoot(cx, &pp->obj);
@@ -49,7 +48,7 @@ static bool js_is_native_obj(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
     args.rval().setBoolean(true);
-    return true;    
+    return true;
 }
 #else
 template<class T>
@@ -84,7 +83,7 @@ static bool empty_constructor(JSContext *cx, uint32_t argc, jsval *vp) {
 static bool js_is_native_obj(JSContext *cx, JS::HandleObject obj, JS::HandleId id, JS::MutableHandleValue vp)
 {
     vp.set(BOOLEAN_TO_JSVAL(true));
-    return true;    
+    return true;
 }
 #endif
 #elif defined(JS_VERSION)
@@ -840,7 +839,7 @@ void js_PluginAppodealJS_PluginAppodeal_finalize(JSFreeOp *fop, JSObject *obj) {
     js_proxy_t* nproxy;
     js_proxy_t* jsproxy;
 
-#if (COCOS2D_VERSION >= 0x00031000)
+#if (SDKBOX_COCOS_JSB_VERSION >= 2)
     JSContext *cx = ScriptingCore::getInstance()->getGlobalContext();
     JS::RootedObject jsobj(cx, obj);
     jsproxy = jsb_get_js_proxy(jsobj);
@@ -854,7 +853,7 @@ void js_PluginAppodealJS_PluginAppodeal_finalize(JSFreeOp *fop, JSObject *obj) {
         sdkbox::PluginAppodeal *nobj = static_cast<sdkbox::PluginAppodeal *>(nproxy->ptr);
         if (nobj)
             delete nobj;
-        
+
         jsb_remove_proxy(nproxy, jsproxy);
     }
 }
@@ -920,11 +919,11 @@ void js_register_PluginAppodealJS_PluginAppodeal(JSContext *cx, JS::HandleObject
         st_funcs);
     // make the class enumerable in the registered namespace
 //  bool found;
-//FIXME: Removed in Firefox v27 
+//FIXME: Removed in Firefox v27
 //  JS_SetPropertyAttributes(cx, global, "PluginAppodeal", JSPROP_ENUMERATE | JSPROP_READONLY, &found);
 
     // add the proto and JSClass to the type->js info hash table
-#if (COCOS2D_VERSION >= 0x00031000)
+#if (SDKBOX_COCOS_JSB_VERSION >= 2)
     JS::RootedObject proto(cx, jsb_sdkbox_PluginAppodeal_prototype);
     jsb_register_class<sdkbox::PluginAppodeal>(cx, jsb_sdkbox_PluginAppodeal_class, proto, JS::NullPtr());
 #else
@@ -1001,7 +1000,7 @@ void js_register_PluginAppodealJS_PluginAppodeal(JSContext *cx, JSObject *global
         st_funcs);
     // make the class enumerable in the registered namespace
 //  bool found;
-//FIXME: Removed in Firefox v27 
+//FIXME: Removed in Firefox v27
 //  JS_SetPropertyAttributes(cx, global, "PluginAppodeal", JSPROP_ENUMERATE | JSPROP_READONLY, &found);
 
     // add the proto and JSClass to the type->js info hash table

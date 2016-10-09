@@ -114,12 +114,12 @@ namespace sdkbox {
             AppodealShowStyleSkippableVideo,
             AppodealShowStyleVideoOrInterstitial,
             AppodealShowStyleBannerTop,
-            AppodealShowStyleBannerCenter,
             AppodealShowStyleBannerBottom,
             AppodealShowStyleRewardedVideo,
+            AppodealShowStyleNonSkippableVideo,
 
+            AppodealShowStyleBannerCenter = AppodealShowStyleBannerBottom, // deprecated
             AppodealShowStyleVideo = AppodealShowStyleSkippableVideo, // deprecated use AppodealShowStyleSkippableVideo
-            AppodealShowStyleNonSkippableVideo = AppodealShowStyleRewardedVideo,
 
             UNKNOWN_STYLE
         } ShowStyle;
