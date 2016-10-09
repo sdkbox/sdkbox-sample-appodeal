@@ -1,8 +1,6 @@
 
 #include "PluginAppodealLuaHelper.h"
 #include "PluginAppodeal/PluginAppodeal.h"
-#include "CCLuaEngine.h"
-#include "tolua_fix.h"
 #include "SDKBoxLuaHelper.h"
 
 class AppodealListenerLua : public sdkbox::AppodealListener {
