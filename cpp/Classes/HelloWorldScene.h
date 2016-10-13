@@ -17,6 +17,9 @@ public:
     CREATE_FUNC(HelloWorld);
 
 private:
+    cocos2d::Label* _info;
+    void showLog(const std::string& log);
+
     void createTestMenu();
 
     virtual void onBannerDidLoadAd();

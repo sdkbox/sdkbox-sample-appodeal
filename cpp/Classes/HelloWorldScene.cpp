@@ -52,6 +52,11 @@ bool HelloWorld::init()
     // add test menu
     createTestMenu();
 
+    //add info
+    _info = Label::createWithSystemFont("", "sans", 32);
+    _info->setPosition(Vec2(winsize.width/2, 64));
+    addChild(_info);
+
     return true;
 }
 
@@ -80,10 +85,10 @@ void HelloWorld::createTestMenu()
         sdkbox::PluginAppodeal::showAd(sdkbox::PluginAppodeal::AppodealShowStyleBannerTop);
     }));
     
-    menu->addChild(MenuItemLabel::create(Label::createWithSystemFont("show ad BannerCenter", "sans", 24), [](Ref*){
-        CCLOG("show ad BannerCenter");
-        sdkbox::PluginAppodeal::showAd(sdkbox::PluginAppodeal::AppodealShowStyleBannerCenter);
-    }));
+//    menu->addChild(MenuItemLabel::create(Label::createWithSystemFont("show ad BannerCenter", "sans", 24), [](Ref*){
+//        CCLOG("show ad BannerCenter");
+//        sdkbox::PluginAppodeal::showAd(sdkbox::PluginAppodeal::AppodealShowStyleBannerCenter);
+//    }));
     
     menu->addChild(MenuItemLabel::create(Label::createWithSystemFont("show ad BannerBottom", "sans", 24), [](Ref*){
         CCLOG("show ad BannerBottom");
@@ -106,95 +111,112 @@ void HelloWorld::createTestMenu()
 
 void HelloWorld::onBannerDidLoadAd()
 {
-    CCLOG("onBannerDidLoadAd");
+    showLog("onBannerDidLoadAd");
 }
 
 void HelloWorld::onBannerDidFailToLoadAd()
 {
-    CCLOG("onBannerDidFailToLoadAd");
+    showLog("onBannerDidFailToLoadAd");
 }
 
 void HelloWorld::onBannerDidClick()
 {
-    CCLOG("onBannerDidClick");
+    showLog("onBannerDidClick");
 }
 
 void HelloWorld::onBannerPresent()
 {
-    CCLOG("onBannerPresent");
+    showLog("onBannerPresent");
 }
 // just trigger on android
 void HelloWorld::onInterstitialDidLoadAd()
 {
-    CCLOG("onInterstitialDidLoadAd");
+    showLog("onInterstitialDidLoadAd");
 }
 
 void HelloWorld::onInterstitialDidFailToLoadAd()
 {
-    CCLOG("onInterstitialDidFailToLoadAd");
+    showLog("onInterstitialDidFailToLoadAd");
 }
 
 void HelloWorld::onInterstitialWillPresent()
 {
-    CCLOG("onInterstitialWillPresent");
+    showLog("onInterstitialWillPresent");
 }
 
 void HelloWorld::onInterstitialDidDismiss()
 {
-    CCLOG("onInterstitialDidDismiss");
+    showLog("onInterstitialDidDismiss");
 }
 
 void HelloWorld::onInterstitialDidClick()
 {
-    CCLOG("onInterstitialDidClick");
+    showLog("onInterstitialDidClick");
 }
 
 void HelloWorld::onVideoDidLoadAd()
 {
-    CCLOG("onVideoDidLoadAd");
+    showLog("onVideoDidLoadAd");
 }
 
 void HelloWorld::onVideoDidFailToLoadAd()
 {
-    CCLOG("onVideoDidFailToLoadAd");
+    showLog("onVideoDidFailToLoadAd");
 }
 
 void HelloWorld::onVideoDidPresent()
 {
-    CCLOG("onVideoDidPresent");
+    showLog("onVideoDidPresent");
 }
 
 void HelloWorld::onVideoWillDismiss()
 {
-    CCLOG("onVideoWillDismiss");
+    showLog("onVideoWillDismiss");
 }
 
 void HelloWorld::onVideoDidFinish()
 {
-    CCLOG("onVideoDidFinish");
+    showLog("onVideoDidFinish");
 }
 
 void HelloWorld::onRewardVideoDidLoadAd()
 {
-    CCLOG("onRewardVideoDidLoadAd");
+    showLog("onRewardVideoDidLoadAd");
 }
 
 void HelloWorld::onRewardVideoDidFailToLoadAd()
 {
-    CCLOG("onRewardVideoDidFailToLoadAd");
+    showLog("onRewardVideoDidFailToLoadAd");
 }
 
 void HelloWorld::onRewardVideoDidPresent()
 {
-    CCLOG("onRewardVideoDidPresent");
+    showLog("onRewardVideoDidPresent");
 }
 
 void HelloWorld::onRewardVideoWillDismiss()
 {
-    CCLOG("onRewardVideoWillDismiss");
+    showLog("onRewardVideoWillDismiss");
 }
 
 void HelloWorld::onRewardVideoDidFinish(int amount, const std::string& name)
 {
+    showLog("onRewardVideoDidFinish");
     CCLOG("onRewardVideoDidFinish, amount = %d, name = %s", amount, name.c_str());
+}
+
+void HelloWorld::showLog(const std::string& log) {
+    std::string s = _info->getString();
+    if (0 == s.length()) {
+        s = log;
+    } else {
+        size_t pos = s.find_last_of('\n');
+        if (pos != std::string::npos) {
+            s = s.substr(pos);
+        }
+        s += '\n';
+        s += log;
+    }
+    _info->setString(s);
+    CCLOG("%s", log.c_str());
 }
