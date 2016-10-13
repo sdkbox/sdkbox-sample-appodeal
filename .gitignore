@@ -19,6 +19,9 @@ cpp/proj.android/libs/appodeal_lib/local.properties
 cpp/proj.android/libs/appodeal_lib/proguard-project.txt
 cpp/proj.android/libs/appodeal_lib/bin/
 cpp/proj.android/libs/appodeal_lib/gen/
+cpp/proj.android/libs/gps/obj/
+cpp/proj.android/libs/gps/gen/
+cpp/proj.android/libs/gps/bin/
 
 lua/frameworks/runtime-src/proj.ios_mac/build
 lua/frameworks/runtime-src/proj.ios_mac/Appodeal.framework/
