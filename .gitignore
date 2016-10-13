@@ -4,6 +4,7 @@ xcuserdata/
 
 Appodeal.zip
 local.properties
+backup-*-*-*.zip
 __tmp/
 
 cpp/bin/
@@ -34,13 +35,18 @@ lua/frameworks/runtime-src/proj.android/assets/
 lua/frameworks/runtime-src/proj.android/obj/
 lua/frameworks/runtime-src/proj.android/bin/
 lua/frameworks/runtime-src/proj.android/gen/
-lua/frameworks/runtime-src/proj.android/libs/
+lua/frameworks/runtime-src/proj.android/libs/armeabi*
 lua/simulator
 lua/frameworks/runtime-src/proj.android/libs/appodeal_lib/bin/
 lua/frameworks/runtime-src/proj.android/libs/appodeal_lib/gen/
 lua/frameworks/runtime-src/proj.android/libs/appodeal_lib/local.properties
 lua/frameworks/runtime-src/proj.android/libs/appodeal_lib/proguard-project.txt
-
+lua/frameworks/runtime-src/proj.android/libs/gps/obj/
+lua/frameworks/runtime-src/proj.android/libs/gps/gen/
+lua/frameworks/runtime-src/proj.android/libs/gps/bin/
+lua/frameworks/runtime-src/proj.android/libs/cheetah-mobile/obj/
+lua/frameworks/runtime-src/proj.android/libs/cheetah-mobile/gen/
+lua/frameworks/runtime-src/proj.android/libs/cheetah-mobile/bin/
 
 js/frameworks/runtime-src/proj.ios_mac/build
 js/frameworks/runtime-src/proj.ios_mac/Appodeal.framework/
@@ -49,9 +55,16 @@ js/frameworks/runtime-src/proj.android/assets/
 js/frameworks/runtime-src/proj.android/obj/
 js/frameworks/runtime-src/proj.android/bin/
 js/frameworks/runtime-src/proj.android/gen/
-js/frameworks/runtime-src/proj.android/libs/
+js/frameworks/runtime-src/proj.android/libs/armeabi*
 js/simulator
 js/frameworks/runtime-src/proj.android/libs/appodeal_lib/bin/
 js/frameworks/runtime-src/proj.android/libs/appodeal_lib/gen/
 js/frameworks/runtime-src/proj.android/libs/appodeal_lib/local.properties
 js/frameworks/runtime-src/proj.android/libs/appodeal_lib/proguard-project.txt
+js/frameworks/runtime-src/proj.android/libs/gps/obj/
+js/frameworks/runtime-src/proj.android/libs/gps/gen/
+js/frameworks/runtime-src/proj.android/libs/gps/bin/
+js/frameworks/runtime-src/proj.android/libs/cheetah-mobile/obj/
+js/frameworks/runtime-src/proj.android/libs/cheetah-mobile/gen/
+js/frameworks/runtime-src/proj.android/libs/cheetah-mobile/bin/
+

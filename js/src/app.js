@@ -110,10 +110,10 @@ var HelloWorldLayer = cc.Layer.extend({
             sdkbox.PluginAppodeal.showAd(AppodealShowStyleBannerTop);
         }));
 
-        menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad BannerCenter", "sans", 24), function() {
-            cc.log("show ad BannerCenter");
-            sdkbox.PluginAppodeal.showAd(AppodealShowStyleBannerCenter);
-        }));
+        // menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad BannerCenter", "sans", 24), function() {
+        //     cc.log("show ad BannerCenter");
+        //     sdkbox.PluginAppodeal.showAd(AppodealShowStyleBannerCenter);
+        // }));
 
         menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad BannerBottom", "sans", 24), function() {
             cc.log("show ad BannerBottom");

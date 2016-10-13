@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01FE48CE987C1505B95E4744 /* libsimulator iOS.a */ = {isa = PBXBuildFile; fileRef = C39F4EA6B9087FA84FAC007D /* libsimulator iOS.a */; };
+		05B14AF382E55BED30525DBC /* GLKit.framework */ = {isa = PBXBuildFile; fileRef = C8304BEA84CD4A0781A44E7C /* GLKit.framework */; };
 		05F74A0B9ACB8A6C2506981D /* appodeal_close.png */ = {isa = PBXBuildFile; fileRef = 95CD4C9ABAB9D037E0934F3C /* appodeal_close.png */; };
 		0788420A9857DB10EDC60E7D /*  */ = {isa = PBXBuildFile; fileRef = DFD1405EBF0EB05C2919A269 /*  */; };
 		09D94667880BB672B8C17E2B /* MPAdBrowserController.nib */ = {isa = PBXBuildFile; fileRef = 53794375B9BACC1C415C51C9 /* MPAdBrowserController.nib */; };
@@ -15,6 +16,7 @@
 		0BDC4E97A8A92AED22802348 /* libz.tbd */ = {isa = PBXBuildFile; fileRef = 59814D88BF929D460C9F579A /* libz.tbd */; };
 		0C2E4EFDAE5C2DD135856BDF /* sdkbox.framework */ = {isa = PBXBuildFile; fileRef = 1CF447A59A580A7BDFE78723 /* sdkbox.framework */; };
 		15A8A4491834C64F00142BE0 /* Icon-114.png */ = {isa = PBXBuildFile; fileRef = 5023810C17EBBCAC00990C9B /* Icon-114.png */; };
+		17284B17BDFED0870EA5DAC7 /* requestThirdPartyAd.json */ = {isa = PBXBuildFile; fileRef = 9FBE418A8F1B2EA1D1D4F94E /* requestThirdPartyAd.json */; };
 		180840C994B1B05A4AE3FF94 /* MPDAAIcon@3x.png */ = {isa = PBXBuildFile; fileRef = 8655467DB64C11C960B48E4A /* MPDAAIcon@3x.png */; };
 		18AE486BAD6FCA2372692C34 /* SystemConfiguration.framework */ = {isa = PBXBuildFile; fileRef = 1C1642268AC2721E9ABF6658 /* SystemConfiguration.framework */; };
 		1AA64492815A28291BD9DA3F /* MPCloseBtn@2x.png */ = {isa = PBXBuildFile; fileRef = 918F4065BC897B91B566D2F6 /* MPCloseBtn@2x.png */; };
@@ -27,6 +29,7 @@
 		31344B018E91665F0D5A7234 /*  */ = {isa = PBXBuildFile; fileRef = F6964FB18B16FA955F1241CB /*  */; };
 		33B543CD9BCC1036C8BA2A43 /*  */ = {isa = PBXBuildFile; fileRef = 37BF48ED9FEF5E481F0E43BC /*  */; };
 		354749FCA7E0DFFC63A09587 /* TOWebViewControllerLocalizable.strings */ = {isa = PBXBuildFile; fileRef = 359F489894B9A28B3A86E677 /* TOWebViewControllerLocalizable.strings */; };
+		35A94A2C974CDF34051B9B6E /*  */ = {isa = PBXBuildFile; fileRef = 2F68414BA9C54EF504A4E5C7 /*  */; };
 		3ADC4E728114C1376D527F7F /*  */ = {isa = PBXBuildFile; fileRef = AC6C4CF1B24EFDBC5DA60C01 /*  */; };
 		3B2A46298F33FFB55FE32C88 /* appodeal_mute_off.png */ = {isa = PBXBuildFile; fileRef = BDD6443091C85536E0BE1018 /* appodeal_mute_off.png */; };
 		3D2B43CA8E43C97F08C065E1 /* appodeal_adbadge@2x.png */ = {isa = PBXBuildFile; fileRef = 0B864DB4840E98E93D66201F /* appodeal_adbadge@2x.png */; };
@@ -83,6 +86,7 @@
 		7A4B41B08332974838770DFA /* PluginAppodealLua.cpp */ = {isa = PBXBuildFile; fileRef = 6C6744ADAD0098E528B4911F /* PluginAppodealLua.cpp */; };
 		7DDF466B9ABB34C340E0F83E /* PluginAppodeal.framework */ = {isa = PBXBuildFile; fileRef = 8A584CA9B44F838175891EAF /* PluginAppodeal.framework */; };
 		811A42638B1D8142B6F1A4AA /* vg_close.png */ = {isa = PBXBuildFile; fileRef = 879E4610A69E1B18AA1C1287 /* vg_close.png */; };
+		811D4B93BADED0E292C77A7D /* MPMutedBtn.png */ = {isa = PBXBuildFile; fileRef = 7A2E42DF9A0795D329C6B95D /* MPMutedBtn.png */; };
 		873C4F93B395C7CEA4570624 /* __vungle.db */ = {isa = PBXBuildFile; fileRef = 1598408B81134756D6B31E0E /* __vungle.db */; };
 		8958496996AE33166D0DB3B7 /* GameController.framework */ = {isa = PBXBuildFile; fileRef = 5A234559A4F74B912F3FC6BA /* GameController.framework */; };
 		8B4A4354B12EE7DBA23305F6 /* appodeal_mute_on_small.png */ = {isa = PBXBuildFile; fileRef = 3F6D46D19EAB22F958A3560C /* appodeal_mute_on_small.png */; };
@@ -127,7 +131,9 @@
 		F293B3DB15EB7BE500256477 /* CoreGraphics.framework */ = {isa = PBXBuildFile; fileRef = F293B3DA15EB7BE500256477 /* CoreGraphics.framework */; };
 		F293BB9C15EB831F00256477 /* AppDelegate.cpp */ = {isa = PBXBuildFile; fileRef = F293BB7E15EB831F00256477 /* AppDelegate.cpp */; };
 		F2F44916AE33AB719B955D54 /* MessageUI.framework */ = {isa = PBXBuildFile; fileRef = 24E8482F80E45C175770AE71 /* MessageUI.framework */; };
+		F4524F128D7088AF552EEC39 /* MPAdBrowserController.xib */ = {isa = PBXBuildFile; fileRef = 9787431E87B41C374B0072D3 /* MPAdBrowserController.xib */; };
 		F7354A28870D76C4000CB3E3 /*  */ = {isa = PBXBuildFile; fileRef = 6A8E41B299F8796B587326F1 /*  */; };
+		FE204636BECAC521B1918347 /* MPUnmutedBtn.png */ = {isa = PBXBuildFile; fileRef = 6AAA4B179EBEBB79279C3E9F /* MPUnmutedBtn.png */; };
 		FEE34520A144E73C51016EFC /* MPDAAIcon.png */ = {isa = PBXBuildFile; fileRef = 1293450981BB93732E9A22E7 /* MPDAAIcon.png */; };
 /* End PBXBuildFile section */
 
@@ -155,6 +161,7 @@
 		24E8482F80E45C175770AE71 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
 		28E64D74B59AFC18BBB5909B /* vg_privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vg_privacy.png; path = plugin_appodeal_res_bundle/vg_privacy.png; sourceTree = SOURCE_ROOT; };
 		2F3A427DB5009F3397D7AE59 /*  */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = ""; path = plugin_appodeal_res_bundle/UnityAds.bundle/; sourceTree = SOURCE_ROOT; };
+		2F68414BA9C54EF504A4E5C7 /*  */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = ""; path = plugin_appodeal_res_bundle/TapjoyResources.bundle/; sourceTree = SOURCE_ROOT; };
 		2FC5474BA84AE472A8DD081C /* Appodeal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Appodeal.framework; path = Appodeal.framework; sourceTree = SOURCE_ROOT; };
 		34AD493FA4C8D5DF6651883B /* MPMutedBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPMutedBtn@3x.png"; path = "plugin_appodeal_res_bundle/MPMutedBtn@3x.png"; sourceTree = SOURCE_ROOT; };
 		37BF48ED9FEF5E481F0E43BC /*  */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = ""; path = plugin_appodeal_res_bundle/MRAID.bundle/; sourceTree = SOURCE_ROOT; };
@@ -214,6 +221,7 @@
 		658B4060B78A646B92801CC5 /*  */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = ""; path = plugin_appodeal_res_bundle/TOWebViewControllerLocalizable.bundle/; sourceTree = SOURCE_ROOT; };
 		6A654AE0975B59E334067968 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = plugin_appodeal_res_bundle/Appodeal.bundle/es.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 		6A8E41B299F8796B587326F1 /*  */ = {isa = PBXFileReference; lastKnownFileType = "?"; name = ""; path = plugin_appodeal_res_bundle/AdManagerAssets.bundle/; sourceTree = SOURCE_ROOT; };
+		6AAA4B179EBEBB79279C3E9F /* MPUnmutedBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MPUnmutedBtn.png; path = plugin_appodeal_res_bundle/MPUnmutedBtn.png; sourceTree = SOURCE_ROOT; };
 		6BFE4728A1442483EA8653A4 /* vg_cta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vg_cta.png; path = plugin_appodeal_res_bundle/vg_cta.png; sourceTree = SOURCE_ROOT; };
 		6C6744ADAD0098E528B4911F /* PluginAppodealLua.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginAppodealLua.cpp; path = ../Classes/PluginAppodealLua.cpp; sourceTree = SOURCE_ROOT; };
 		6EC641AD98AA024E1443BAD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = plugin_appodeal_res_bundle/UnityAds.bundle/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
@@ -223,6 +231,7 @@
 		743E44AE8F0EFDBF09D7DD74 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = plugin_appodeal_res_bundle/TOWebViewControllerLocalizable.bundle/fr.lproj/TOWebViewControllerLocalizable.strings; sourceTree = SOURCE_ROOT; };
 		74504302983F5C5C58C8380A /* libluacocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libluacocos2d iOS.a"; path = "$(SRCROOT)/../../../../../sdkbox-cocos2d-x-binary/prebuilt/ios/libluacocos2d iOS.a"; sourceTree = "<absolute>"; };
 		78584DB0B60F5A081A5BF0BF /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = plugin_appodeal_res_bundle/Appodeal.bundle/uk.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
+		7A2E42DF9A0795D329C6B95D /* MPMutedBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MPMutedBtn.png; path = plugin_appodeal_res_bundle/MPMutedBtn.png; sourceTree = SOURCE_ROOT; };
 		83AA4E27BBD85C694AD62106 /* MPMutedBtn@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPMutedBtn@1x.png"; path = "plugin_appodeal_res_bundle/MPMutedBtn@1x.png"; sourceTree = SOURCE_ROOT; };
 		852441989ADE6DFA8E279BBB /* MPUnmutedBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPUnmutedBtn@2x.png"; path = "plugin_appodeal_res_bundle/MPUnmutedBtn@2x.png"; sourceTree = SOURCE_ROOT; };
 		8655467DB64C11C960B48E4A /* MPDAAIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPDAAIcon@3x.png"; path = "plugin_appodeal_res_bundle/MPDAAIcon@3x.png"; sourceTree = SOURCE_ROOT; };
@@ -235,9 +244,11 @@
 		918F4065BC897B91B566D2F6 /* MPCloseBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPCloseBtn@2x.png"; path = "plugin_appodeal_res_bundle/MPCloseBtn@2x.png"; sourceTree = SOURCE_ROOT; };
 		94C9489CB6AFC7F480F29245 /* PluginAppodealLua.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginAppodealLua.hpp; path = ../Classes/PluginAppodealLua.hpp; sourceTree = SOURCE_ROOT; };
 		95CD4C9ABAB9D037E0934F3C /* appodeal_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appodeal_close.png; path = plugin_appodeal_res_bundle/appodeal_close.png; sourceTree = SOURCE_ROOT; };
+		9787431E87B41C374B0072D3 /* MPAdBrowserController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MPAdBrowserController.xib; path = plugin_appodeal_res_bundle/MPAdBrowserController.xib; sourceTree = SOURCE_ROOT; };
 		9EF04D6BAD69E253656043F4 /* MPUnmutedBtn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MPUnmutedBtn@3x.png"; path = "plugin_appodeal_res_bundle/MPUnmutedBtn@3x.png"; sourceTree = SOURCE_ROOT; };
 		9F6F494F8520259A94E4337F /* vg_mute_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vg_mute_on.png; path = plugin_appodeal_res_bundle/vg_mute_on.png; sourceTree = SOURCE_ROOT; };
 		9FA3AE4D1BE9BCC900FC9645 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		9FBE418A8F1B2EA1D1D4F94E /* requestThirdPartyAd.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = requestThirdPartyAd.json; path = plugin_appodeal_res_bundle/requestThirdPartyAd.json; sourceTree = SOURCE_ROOT; };
 		9FC7603F1A67791200D1E6E7 /* CodeIDESupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeIDESupport.h; sourceTree = "<group>"; };
 		9FC760401A67791200D1E6E7 /* lang */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lang; sourceTree = "<group>"; };
 		9FC760411A67791200D1E6E7 /* SimpleConfigParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleConfigParser.cpp; sourceTree = "<group>"; };
@@ -264,6 +275,7 @@
 		C1E94BF38D738D67B28F8C62 /* vg_mute_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vg_mute_off.png; path = plugin_appodeal_res_bundle/vg_mute_off.png; sourceTree = SOURCE_ROOT; };
 		C39F4EA6B9087FA84FAC007D /* libsimulator iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libsimulator iOS.a"; path = "$(SRCROOT)/../../../../../sdkbox-cocos2d-x-binary/prebuilt/ios/libsimulator iOS.a"; sourceTree = "<absolute>"; };
 		C6464E0CBB8C010CB392AC4A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh-Hans; path = plugin_appodeal_res_bundle/TOWebViewControllerLocalizable.bundle/zh-Hans.lproj/TOWebViewControllerLocalizable.strings; sourceTree = SOURCE_ROOT; };
+		C8304BEA84CD4A0781A44E7C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
 		CCD44DBE9881B6586E30B567 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		D6B061341803AC000077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		DA9E7D871AB1ABCC004B27C8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -343,6 +355,7 @@
 				8958496996AE33166D0DB3B7 /* GameController.framework */,
 				692E40DEAE300F47835D8C54 /* JavaScriptCore.framework */,
 				9442437AADD923D6AB0EEE5F /* CoreBluetooth.framework */,
+				05B14AF382E55BED30525DBC /* GLKit.framework */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +454,11 @@
 				3F6D46D19EAB22F958A3560C /* appodeal_mute_on_small.png */,
 				AC6C4CF1B24EFDBC5DA60C01 /*  */,
 				AB0E42D48C13CA56B299B16D /* Localizable.strings */,
+				6AAA4B179EBEBB79279C3E9F /* MPUnmutedBtn.png */,
+				7A2E42DF9A0795D329C6B95D /* MPMutedBtn.png */,
+				9787431E87B41C374B0072D3 /* MPAdBrowserController.xib */,
+				9FBE418A8F1B2EA1D1D4F94E /* requestThirdPartyAd.json */,
+				2F68414BA9C54EF504A4E5C7 /*  */,
 			);
 			name = plugin_appodeal_res_bundle;
 			path = plugin_appodeal_res_bundle/;
@@ -544,6 +562,7 @@
 				5A234559A4F74B912F3FC6BA /* GameController.framework */,
 				CCD44DBE9881B6586E30B567 /* JavaScriptCore.framework */,
 				61B541949D9D9C71B94DA9A0 /* CoreBluetooth.framework */,
+				C8304BEA84CD4A0781A44E7C /* GLKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -699,6 +718,11 @@
 				8B4A4354B12EE7DBA23305F6 /* appodeal_mute_on_small.png */,
 				3ADC4E728114C1376D527F7F /*  */,
 				E2954EA69031025069E31571 /* Localizable.strings */,
+				FE204636BECAC521B1918347 /* MPUnmutedBtn.png */,
+				811D4B93BADED0E292C77A7D /* MPMutedBtn.png */,
+				F4524F128D7088AF552EEC39 /* MPAdBrowserController.xib */,
+				17284B17BDFED0870EA5DAC7 /* requestThirdPartyAd.json */,
+				35A94A2C974CDF34051B9B6E /*  */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
