@@ -74,6 +74,57 @@ var HelloWorldLayer = cc.Layer.extend({
             },
             onVideoDidFinish: function() {
                 cc.log("onVideoDidFinish");
+            },
+            onRewardVideoDidLoadAd: function() {
+                cc.log("onRewardVideoDidLoadAd");
+            },
+            onRewardVideoDidFailToLoadAd: function() {
+                cc.log("onRewardVideoDidFailToLoadAd");
+            },
+            onRewardVideoDidPresent: function() {
+                cc.log("onRewardVideoDidPresent");
+            },
+            onRewardVideoWillDismiss: function() {
+                cc.log("onRewardVideoWillDismiss");
+            },
+            onRewardVideoDidFinish: function(amount, name) {
+                cc.log("onRewardVideoDidFinish");
+            },
+            onSkippableVideoDidLoadAd: function() {
+                cc.log("onSkippableVideoDidLoadAd");
+            },
+            onSkippableVideoDidFailToLoadAd: function() {
+                cc.log("onSkippableVideoDidFailToLoadAd");
+            },
+            onSkippableVideoDidPresent: function() {
+                cc.log("onSkippableVideoDidPresent");
+            },
+            onSkippableVideoWillDismiss: function() {
+                cc.log("onSkippableVideoWillDismiss");
+            },
+            onSkippableVideoDidFinish: function() {
+                cc.log("onSkippableVideoDidFinish");
+            },
+            onSkippableVideoDidClick: function() {
+                cc.log("onSkippableVideoDidClick");
+            },
+            onNonSkippableVideoDidLoadAd: function() {
+                cc.log("onNonSkippableVideoDidLoadAd");
+            },
+            onNonSkippableVideoDidFailToLoadAd: function() {
+                cc.log("onNonSkippableVideoDidFailToLoadAd");
+            },
+            onNonSkippableVideoDidPresent: function() {
+                cc.log("onNonSkippableVideoDidPresent");
+            },
+            onNonSkippableVideoWillDismiss: function() {
+                cc.log("onNonSkippableVideoWillDismiss");
+            },
+            onNonSkippableVideoDidFinish: function() {
+                cc.log("onNonSkippableVideoDidFinish");
+            },
+            onNonSkippableVideoDidClick: function() {
+                cc.log("onNonSkippableVideoDidClick");
             }
         });
 
