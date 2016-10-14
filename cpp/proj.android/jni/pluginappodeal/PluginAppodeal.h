@@ -17,96 +17,176 @@ namespace sdkbox {
         /**
          * trigger when banner ad load
          */
-        virtual void onBannerDidLoadAd() = 0;
+        virtual void onBannerDidLoadAd() {};
         /**
          * trigger when banner ad fail to load
          */
-        virtual void onBannerDidFailToLoadAd() = 0;
+        virtual void onBannerDidFailToLoadAd() {};
         /**
          * trigger when banner ad clicked
          */
-        virtual void onBannerDidClick() = 0;
+        virtual void onBannerDidClick() {};
         /**
          * trigger when banner ad present
          */
-        virtual void onBannerPresent() = 0; // just trigger on android
+        virtual void onBannerPresent() {};
+
 
         /**
          * trigger when interstitial ad load
          */
-        virtual void onInterstitialDidLoadAd() = 0;
+        virtual void onInterstitialDidLoadAd() {};
         /**
          * trigger when interstitial ad fail to load
          */
-        virtual void onInterstitialDidFailToLoadAd() = 0;
+        virtual void onInterstitialDidFailToLoadAd() {};
         /**
          * trigger when interstitial ad present
          */
-        virtual void onInterstitialWillPresent() = 0;
+        virtual void onInterstitialWillPresent() {};
         /**
          * trigger when interstitial dismiss
          */
-        virtual void onInterstitialDidDismiss() = 0;
+        virtual void onInterstitialDidDismiss() {};
         /**
          * trigger when interstitial ad clicked
          */
-        virtual void onInterstitialDidClick() = 0;
+        virtual void onInterstitialDidClick() {};
+
 
         /**
          * trigger when video load
+         * deprecated
          */
-        virtual void onVideoDidLoadAd() = 0;
+        virtual void onVideoDidLoadAd() {};
         /**
          * trigger when video fail to load
+         * deprecated
          */
-        virtual void onVideoDidFailToLoadAd() = 0;
+        virtual void onVideoDidFailToLoadAd() {};
         /**
          * trigger when video present
+         * deprecated
          */
-        virtual void onVideoDidPresent() = 0;
+        virtual void onVideoDidPresent() {};
         /**
          * trigger when video dismiss
+         * deprecated
          */
-        virtual void onVideoWillDismiss() = 0;
+        virtual void onVideoWillDismiss() {};
         /**
          * trigger when video finish
+         * deprecated
          */
-        virtual void onVideoDidFinish() = 0;
+        virtual void onVideoDidFinish() {};
+
 
         /**
          * trigger when reward video load
          */
-        virtual void onRewardVideoDidLoadAd() = 0;
+        virtual void onRewardVideoDidLoadAd() {};
         /**
          * trigger when reward video fail to load
          */
-        virtual void onRewardVideoDidFailToLoadAd() = 0;
+        virtual void onRewardVideoDidFailToLoadAd() {};
         /**
          * trigger when reward video present
          */
-        virtual void onRewardVideoDidPresent() = 0;
+        virtual void onRewardVideoDidPresent() {};
         /**
          * trigger when reward video dismiss
          */
-        virtual void onRewardVideoWillDismiss() = 0;
+        virtual void onRewardVideoWillDismiss() {};
         /**
          * trigger when reward video finish
          */
-        virtual void onRewardVideoDidFinish(int amount, const std::string& name) = 0;
+        virtual void onRewardVideoDidFinish(int amount, const std::string& name) {};
+
+
+        /**
+         * trigger when skippable video load
+         */
+        virtual void onSkippableVideoDidLoadAd() {};
+        /**
+         * trigger when skippable video fial to load
+         */
+        virtual void onSkippableVideoDidFailToLoadAd() {};
+        /**
+         * trigger when skippable video present
+         */
+        virtual void onSkippableVideoDidPresent() {};
+        /**
+         * trigger when skippable video dismiss
+         */
+        virtual void onSkippableVideoWillDismiss() {};
+        /**
+         * trigger when skippable video finish
+         */
+        virtual void onSkippableVideoDidFinish() {};
+        /**
+         * trigger when skippable video click
+         */
+        virtual void onSkippableVideoDidClick() {};
+
+
+        /**
+         * trigger when nonskippable video load
+         */
+        virtual void onNonSkippableVideoDidLoadAd() {};
+        /**
+         * trigger when nonskippable video fial to load
+         */
+        virtual void onNonSkippableVideoDidFailToLoadAd() {};
+        /**
+         * trigger when nonskippable video present
+         */
+        virtual void onNonSkippableVideoDidPresent() {};
+        /**
+         * trigger when nonskippable video dismiss
+         */
+        virtual void onNonSkippableVideoWillDismiss() {};
+        /**
+         * trigger when nonskippable video finish
+         */
+        virtual void onNonSkippableVideoDidFinish() {};
+        /**
+         * trigger when nonskippable video click
+         */
+        virtual void onNonSkippableVideoDidClick() {};
     };
 
     class PluginAppodeal {
     public:
 
         typedef enum {
+
             AppodealAdTypeInterstitial = 1 << 0,
+
+            /**
+             * Skippable video (can be skipped by user after several seconds of watch)
+             */
             AppodealAdTypeSkippableVideo = 1 << 1,
-            AppodealAdTypeVideo        = 1 << 1,    //deprecated use AppodealAdTypeSkippableVideo
+
             AppodealAdTypeBanner       = 1 << 2,
+
             AppodealAdTypeNativeAd     = 1 << 3,
+
             AppodealAdTypeRewardVideo  = 1 << 4,
-            AppodealAdTypeNonSkippableVideo = AppodealAdTypeRewardVideo,
-            AppodealAdTypeAll          = AppodealAdTypeInterstitial | AppodealAdTypeSkippableVideo | AppodealAdTypeBanner | AppodealAdTypeNativeAd | AppodealAdTypeRewardVideo
+
+            AppodealAdTypeMREC         = 1 << 5,
+
+            /**
+             * Non skippable video (does not return reward parameter in finish callback, can not be skipped by user)
+             */
+            AppodealAdTypeNonSkippableVideo = 1 <<6,
+
+            AppodealAdTypeAll          = AppodealAdTypeInterstitial | AppodealAdTypeSkippableVideo | AppodealAdTypeBanner | AppodealAdTypeNativeAd | AppodealAdTypeRewardVideo | AppodealAdTypeNonSkippableVideo,
+
+            /**
+             * deprecated, use AppodealAdTypeSkippableVideo instead
+             */
+            AppodealAdTypeVideo        = AppodealAdTypeSkippableVideo
+
         } AdType;
 
         typedef enum {
@@ -118,8 +198,15 @@ namespace sdkbox {
             AppodealShowStyleRewardedVideo,
             AppodealShowStyleNonSkippableVideo,
 
-            AppodealShowStyleBannerCenter = AppodealShowStyleBannerBottom, // deprecated
-            AppodealShowStyleVideo = AppodealShowStyleSkippableVideo, // deprecated use AppodealShowStyleSkippableVideo
+            /**
+             * deprecated
+             */
+            AppodealShowStyleBannerCenter = AppodealShowStyleBannerBottom,
+
+            /**
+             * deprecated, use AppodealShowStyleSkippableVideo instead
+             */
+            AppodealShowStyleVideo = AppodealShowStyleSkippableVideo,
 
             UNKNOWN_STYLE
         } ShowStyle;
@@ -178,6 +265,10 @@ namespace sdkbox {
          */
         static void removeListener();
 
+        static std::string getSDKVersion();
+        /**
+         * deprecated
+         */
         static void disableNetworkForAdType(AdType adType, const std::string& networkName);
         static void disableLocationPermissionCheck();
         static void setAutocache(bool autocache, AdType types);

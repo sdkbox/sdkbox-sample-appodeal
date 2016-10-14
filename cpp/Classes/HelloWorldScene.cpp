@@ -205,6 +205,66 @@ void HelloWorld::onRewardVideoDidFinish(int amount, const std::string& name)
     CCLOG("onRewardVideoDidFinish, amount = %d, name = %s", amount, name.c_str());
 }
 
+void HelloWorld::onSkippableVideoDidLoadAd()
+{
+    showLog("onSkippableVideoDidLoadAd");
+}
+
+void HelloWorld::onSkippableVideoDidFailToLoadAd()
+{
+    showLog("onSkippableVideoDidFailToLoadAd");
+}
+
+void HelloWorld::onSkippableVideoDidPresent()
+{
+    showLog("onSkippableVideoDidPresent");
+}
+
+void HelloWorld::onSkippableVideoWillDismiss()
+{
+    showLog("onSkippableVideoWillDismiss");
+}
+
+void HelloWorld::onSkippableVideoDidFinish()
+{
+    showLog("onSkippableVideoDidFinish");
+}
+
+void HelloWorld::onSkippableVideoDidClick()
+{
+    showLog("onSkippableVideoDidClick");
+}
+
+void HelloWorld::onNonSkippableVideoDidLoadAd()
+{
+    showLog("onNonSkippableVideoDidLoadAd");
+}
+
+void HelloWorld::onNonSkippableVideoDidFailToLoadAd()
+{
+    showLog("onNonSkippableVideoDidFailToLoadAd");
+}
+
+void HelloWorld::onNonSkippableVideoDidPresent()
+{
+    showLog("onNonSkippableVideoDidPresent");
+}
+
+void HelloWorld::onNonSkippableVideoWillDismiss()
+{
+    showLog("onNonSkippableVideoWillDismiss");
+}
+
+void HelloWorld::onNonSkippableVideoDidFinish()
+{
+    showLog("onNonSkippableVideoDidFinish");
+}
+
+void HelloWorld::onNonSkippableVideoDidClick()
+{
+    showLog("onNonSkippableVideoDidClick");
+}
+
 void HelloWorld::showLog(const std::string& log) {
     std::string s = _info->getString();
     if (0 == s.length()) {

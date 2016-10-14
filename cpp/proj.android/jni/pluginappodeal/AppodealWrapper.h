@@ -21,6 +21,7 @@ public:
     virtual AppodealListener* getListener()=0;
     virtual void removeListener()=0;
     
+    virtual std::string getSDKVersion()=0;
     virtual void disableNetworkForAdType(PluginAppodeal::AdType adType, const std::string& networkName)=0;
     virtual void disableLocationPermissionCheck()=0;
     virtual void setAutocache(bool autocache, PluginAppodeal::AdType types)=0;
@@ -55,6 +56,7 @@ public:
     AppodealListener* getListener() { return NULL; }
     void removeListener() {}
     
+    std::string getSDKVersion() { return ""; };
     void disableNetworkForAdType(PluginAppodeal::AdType adType, const std::string& networkName) {}
     void disableLocationPermissionCheck() {}
     void setAutocache(bool autocache, PluginAppodeal::AdType types) {}
@@ -92,6 +94,7 @@ public:
     AppodealListener* getListener();
     void removeListener();
 
+    std::string getSDKVersion();
     void disableNetworkForAdType(PluginAppodeal::AdType adType, const std::string& networkName);
     void disableLocationPermissionCheck();
     void setAutocache(bool autocache, PluginAppodeal::AdType types);

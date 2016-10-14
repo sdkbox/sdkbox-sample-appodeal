@@ -44,6 +44,20 @@ private:
     virtual void onRewardVideoDidPresent();
     virtual void onRewardVideoWillDismiss();
     virtual void onRewardVideoDidFinish(int amount, const std::string& name);
+    
+    virtual void onSkippableVideoDidLoadAd();
+    virtual void onSkippableVideoDidFailToLoadAd();
+    virtual void onSkippableVideoDidPresent();
+    virtual void onSkippableVideoWillDismiss();
+    virtual void onSkippableVideoDidFinish();
+    virtual void onSkippableVideoDidClick();
+    
+    virtual void onNonSkippableVideoDidLoadAd();
+    virtual void onNonSkippableVideoDidFailToLoadAd();
+    virtual void onNonSkippableVideoDidPresent();
+    virtual void onNonSkippableVideoWillDismiss();
+    virtual void onNonSkippableVideoDidFinish();
+    virtual void onNonSkippableVideoDidClick();
 };
 
 #endif // __HELLOWORLD_SCENE_H__
