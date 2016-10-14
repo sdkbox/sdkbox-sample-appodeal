@@ -3,7 +3,7 @@ CUR_DIR=$(cd "$(dirname $0)" && pwd)
 
 cd $CUR_DIR
 
-MD5="MD5 (Appodeal.zip) = a8ca3fb004c3b895e76e5ae43aa68bcc"
+MD5="MD5 (Appodeal.zip) = 6b778188356e72f18d543917c900294c"
 ZIP_FILENAME="Appodeal.zip"
 TMP_DIR="__tmp"
 
@@ -18,7 +18,7 @@ if [ -f $ZIP_FILENAME ]; then
 fi
 
 if [ ! -f $ZIP_FILENAME ]; then
-	curl -o $ZIP_FILENAME "https://s3-us-west-1.amazonaws.com/appodeal-ios/0.9.1/biv/Appodeal-BIV.zip"
+	curl -o $ZIP_FILENAME "https://s3-us-west-1.amazonaws.com/appodeal-ios/1.3.0/Appodeal-1.3.0-fat.zip"
 fi
 
 if [ -d $TMP_DIR ]; then
