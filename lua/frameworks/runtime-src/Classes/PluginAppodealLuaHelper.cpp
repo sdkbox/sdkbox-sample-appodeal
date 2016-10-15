@@ -5,29 +5,29 @@
 
 class AppodealListenerLua : public sdkbox::AppodealListener {
 public:
-	AppodealListenerLua(): mLuaHandler(0) {
-	}
+    AppodealListenerLua(): mLuaHandler(0) {
+    }
 
-	~AppodealListenerLua() {
-		resetHandler();
-	}
+    ~AppodealListenerLua() {
+        resetHandler();
+    }
 
-	void setHandler(int luaHandler) {
-		if (mLuaHandler == luaHandler) {
-			return;
-		}
-		resetHandler();
-		mLuaHandler = luaHandler;
-	}
+    void setHandler(int luaHandler) {
+        if (mLuaHandler == luaHandler) {
+            return;
+        }
+        resetHandler();
+        mLuaHandler = luaHandler;
+    }
 
-	void resetHandler() {
-		if (0 == mLuaHandler) {
-			return;
-		}
+    void resetHandler() {
+        if (0 == mLuaHandler) {
+            return;
+        }
 
         LUAENGINE->removeScriptHandler(mLuaHandler);
-		mLuaHandler = 0;
-	}
+        mLuaHandler = 0;
+    }
 
     void onBannerDidLoadAd() {
         LuaStack* stack = LUAENGINE->getLuaStack();
@@ -178,7 +178,7 @@ public:
         stack->pushLuaValueDict(dict);
         stack->executeFunctionByHandler(mLuaHandler, 1);
     }
-    
+
     void onRewardVideoDidFailToLoadAd() {
         LuaStack* stack = LUAENGINE->getLuaStack();
         LuaValueDict dict;
@@ -188,7 +188,7 @@ public:
         stack->pushLuaValueDict(dict);
         stack->executeFunctionByHandler(mLuaHandler, 1);
     }
-    
+
     void onRewardVideoDidPresent() {
         LuaStack* stack = LUAENGINE->getLuaStack();
         LuaValueDict dict;
@@ -198,7 +198,7 @@ public:
         stack->pushLuaValueDict(dict);
         stack->executeFunctionByHandler(mLuaHandler, 1);
     }
-    
+
     void onRewardVideoWillDismiss() {
         LuaStack* stack = LUAENGINE->getLuaStack();
         LuaValueDict dict;
@@ -208,7 +208,7 @@ public:
         stack->pushLuaValueDict(dict);
         stack->executeFunctionByHandler(mLuaHandler, 1);
     }
-    
+
     void onRewardVideoDidFinish(int amount, const std::string& name) {
         LuaStack* stack = LUAENGINE->getLuaStack();
         LuaValueDict dict;
@@ -221,12 +221,132 @@ public:
         stack->executeFunctionByHandler(mLuaHandler, 1);
     }
 
+    void onSkippableVideoDidLoadAd() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onSkippableVideoDidLoadAd")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onSkippableVideoDidFailToLoadAd() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onSkippableVideoDidFailToLoadAd")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onSkippableVideoDidPresent() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onSkippableVideoDidPresent")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onSkippableVideoWillDismiss() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onSkippableVideoWillDismiss")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onSkippableVideoDidFinish() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onSkippableVideoDidFinish")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onSkippableVideoDidClick() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onSkippableVideoDidClick")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onNonSkippableVideoDidLoadAd() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onNonSkippableVideoDidLoadAd")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onNonSkippableVideoDidFailToLoadAd() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onNonSkippableVideoDidFailToLoadAd")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onNonSkippableVideoDidPresent() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onNonSkippableVideoDidPresent")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onNonSkippableVideoWillDismiss() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onNonSkippableVideoWillDismiss")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onNonSkippableVideoDidFinish() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onNonSkippableVideoDidFinish")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
+    void onNonSkippableVideoDidClick() {
+        LuaStack* stack = LUAENGINE->getLuaStack();
+        LuaValueDict dict;
+
+        dict.insert(std::make_pair("event", LuaValue::stringValue("onNonSkippableVideoDidClick")));
+
+        stack->pushLuaValueDict(dict);
+        stack->executeFunctionByHandler(mLuaHandler, 1);
+    }
+
 private:
-	int mLuaHandler;
+    int mLuaHandler;
 };
 
 int lua_PluginAppodealLua_PluginAppodeal_setListener(lua_State* tolua_S) {
-	int argc = 0;
+    int argc = 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_Error tolua_err;
@@ -267,11 +387,11 @@ tolua_lerror:
 
 
 int extern_PluginAppodeal(lua_State* L) {
-	if (NULL == L) {
-		return 0;
-	}
+    if (NULL == L) {
+        return 0;
+    }
 
-	lua_pushstring(L, "sdkbox.PluginAppodeal");
+    lua_pushstring(L, "sdkbox.PluginAppodeal");
     lua_rawget(L, LUA_REGISTRYINDEX);
     if (lua_istable(L,-1))
     {
@@ -283,13 +403,13 @@ int extern_PluginAppodeal(lua_State* L) {
 }
 
 TOLUA_API int register_all_PluginAppodealLua_helper(lua_State* L) {
-	tolua_module(L,"sdkbox",0);
-	tolua_beginmodule(L,"sdkbox");
+    tolua_module(L,"sdkbox",0);
+    tolua_beginmodule(L,"sdkbox");
 
-	extern_PluginAppodeal(L);
+    extern_PluginAppodeal(L);
 
-	tolua_endmodule(L);
-	return 1;
+    tolua_endmodule(L);
+    return 1;
 }
 
 

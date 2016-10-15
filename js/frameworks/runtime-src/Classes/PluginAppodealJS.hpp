@@ -34,6 +34,11 @@ bool js_PluginAppodealJS_PluginAppodeal_setUserGender(JSContext *cx, uint32_t ar
 JSBool js_PluginAppodealJS_PluginAppodeal_setUserGender(JSContext *cx, uint32_t argc, jsval *vp);
 #endif
 #if defined(MOZJS_MAJOR_VERSION)
+bool js_PluginAppodealJS_PluginAppodeal_getSDKVersion(JSContext *cx, uint32_t argc, jsval *vp);
+#elif defined(JS_VERSION)
+JSBool js_PluginAppodealJS_PluginAppodeal_getSDKVersion(JSContext *cx, uint32_t argc, jsval *vp);
+#endif
+#if defined(MOZJS_MAJOR_VERSION)
 bool js_PluginAppodealJS_PluginAppodeal_disableNetworkForAdType(JSContext *cx, uint32_t argc, jsval *vp);
 #elif defined(JS_VERSION)
 JSBool js_PluginAppodealJS_PluginAppodeal_disableNetworkForAdType(JSContext *cx, uint32_t argc, jsval *vp);

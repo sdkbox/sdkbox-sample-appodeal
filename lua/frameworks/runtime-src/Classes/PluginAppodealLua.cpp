@@ -111,6 +111,40 @@ int lua_PluginAppodealLua_PluginAppodeal_setUserGender(lua_State* tolua_S)
 #endif
     return 0;
 }
+int lua_PluginAppodealLua_PluginAppodeal_getSDKVersion(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAppodeal",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAppodealLua_PluginAppodeal_getSDKVersion'", nullptr);
+            return 0;
+        }
+        std::string ret = sdkbox::PluginAppodeal::getSDKVersion();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAppodeal:getSDKVersion",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAppodealLua_PluginAppodeal_getSDKVersion'.",&tolua_err);
+#endif
+    return 0;
+}
 int lua_PluginAppodealLua_PluginAppodeal_disableNetworkForAdType(lua_State* tolua_S)
 {
     int argc = 0;
@@ -810,6 +844,7 @@ int lua_register_PluginAppodealLua_PluginAppodeal(lua_State* tolua_S)
         tolua_function(tolua_S,"isAutocacheEnabled", lua_PluginAppodealLua_PluginAppodeal_isAutocacheEnabled);
         tolua_function(tolua_S,"hideBanner", lua_PluginAppodealLua_PluginAppodeal_hideBanner);
         tolua_function(tolua_S,"setUserGender", lua_PluginAppodealLua_PluginAppodeal_setUserGender);
+        tolua_function(tolua_S,"getSDKVersion", lua_PluginAppodealLua_PluginAppodeal_getSDKVersion);
         tolua_function(tolua_S,"disableNetworkForAdType", lua_PluginAppodealLua_PluginAppodeal_disableNetworkForAdType);
         tolua_function(tolua_S,"setUserSmokingAttitude", lua_PluginAppodealLua_PluginAppodeal_setUserSmokingAttitude);
         tolua_function(tolua_S,"setUserInterests", lua_PluginAppodealLua_PluginAppodeal_setUserInterests);

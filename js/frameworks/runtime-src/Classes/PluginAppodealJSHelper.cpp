@@ -168,6 +168,90 @@ public:
         cb->autorelease();
     }
 
+    void onSkippableVideoDidLoadAd() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onSkippableVideoDidLoadAd";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onSkippableVideoDidFailToLoadAd() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onSkippableVideoDidFailToLoadAd";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onSkippableVideoDidPresent() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onSkippableVideoDidPresent";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onSkippableVideoWillDismiss() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onSkippableVideoWillDismiss";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onSkippableVideoDidFinish() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onSkippableVideoDidFinish";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onSkippableVideoDidClick() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onSkippableVideoDidClick";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onNonSkippableVideoDidLoadAd() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onNonSkippableVideoDidLoadAd";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onNonSkippableVideoDidFailToLoadAd() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onNonSkippableVideoDidFailToLoadAd";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onNonSkippableVideoDidPresent() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onNonSkippableVideoDidPresent";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onNonSkippableVideoWillDismiss() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onNonSkippableVideoWillDismiss";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onNonSkippableVideoDidFinish() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onNonSkippableVideoDidFinish";
+        cb->schedule();
+        cb->autorelease();
+    }
+
+    void onNonSkippableVideoDidClick() {
+        ADCallbackJS* cb = new ADCallbackJS();
+        cb->_name = "onNonSkippableVideoDidClick";
+        cb->schedule();
+        cb->autorelease();
+    }
+
     void invokeJS(const char* func, jsval* pVals, int valueSize) {
         if (!s_cx) {
             return;

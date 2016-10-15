@@ -204,6 +204,34 @@ JSBool js_PluginAppodealJS_PluginAppodeal_setUserGender(JSContext *cx, uint32_t 
 }
 #endif
 #if defined(MOZJS_MAJOR_VERSION)
+bool js_PluginAppodealJS_PluginAppodeal_getSDKVersion(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
+    if (argc == 0) {
+        std::string ret = sdkbox::PluginAppodeal::getSDKVersion();
+        jsval jsret = JSVAL_NULL;
+        jsret = std_string_to_jsval(cx, ret);
+        args.rval().set(jsret);
+        return true;
+    }
+    JS_ReportError(cx, "js_PluginAppodealJS_PluginAppodeal_getSDKVersion : wrong number of arguments");
+    return false;
+}
+#elif defined(JS_VERSION)
+JSBool js_PluginAppodealJS_PluginAppodeal_getSDKVersion(JSContext *cx, uint32_t argc, jsval *vp)
+{
+    if (argc == 0) {
+        std::string ret = sdkbox::PluginAppodeal::getSDKVersion();
+        jsval jsret;
+        jsret = std_string_to_jsval(cx, ret);
+        JS_SET_RVAL(cx, vp, jsret);
+        return JS_TRUE;
+    }
+    JS_ReportError(cx, "wrong number of arguments");
+    return JS_FALSE;
+}
+#endif
+#if defined(MOZJS_MAJOR_VERSION)
 bool js_PluginAppodealJS_PluginAppodeal_disableNetworkForAdType(JSContext *cx, uint32_t argc, jsval *vp)
 {
     JS::CallArgs args = JS::CallArgsFromVp(argc, vp);
@@ -886,6 +914,7 @@ void js_register_PluginAppodealJS_PluginAppodeal(JSContext *cx, JS::HandleObject
         JS_FN("isAutocacheEnabled", js_PluginAppodealJS_PluginAppodeal_isAutocacheEnabled, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("hideBanner", js_PluginAppodealJS_PluginAppodeal_hideBanner, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setUserGender", js_PluginAppodealJS_PluginAppodeal_setUserGender, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getSDKVersion", js_PluginAppodealJS_PluginAppodeal_getSDKVersion, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("disableNetworkForAdType", js_PluginAppodealJS_PluginAppodeal_disableNetworkForAdType, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setUserSmokingAttitude", js_PluginAppodealJS_PluginAppodeal_setUserSmokingAttitude, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setUserInterests", js_PluginAppodealJS_PluginAppodeal_setUserInterests, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
@@ -967,6 +996,7 @@ void js_register_PluginAppodealJS_PluginAppodeal(JSContext *cx, JSObject *global
         JS_FN("isAutocacheEnabled", js_PluginAppodealJS_PluginAppodeal_isAutocacheEnabled, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("hideBanner", js_PluginAppodealJS_PluginAppodeal_hideBanner, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setUserGender", js_PluginAppodealJS_PluginAppodeal_setUserGender, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getSDKVersion", js_PluginAppodealJS_PluginAppodeal_getSDKVersion, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("disableNetworkForAdType", js_PluginAppodealJS_PluginAppodeal_disableNetworkForAdType, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setUserSmokingAttitude", js_PluginAppodealJS_PluginAppodeal_setUserSmokingAttitude, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setUserInterests", js_PluginAppodealJS_PluginAppodeal_setUserInterests, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
@@ -1039,6 +1069,7 @@ void js_register_PluginAppodealJS_PluginAppodeal(JSContext *cx, JSObject *global
         JS_FN("isAutocacheEnabled", js_PluginAppodealJS_PluginAppodeal_isAutocacheEnabled, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("hideBanner", js_PluginAppodealJS_PluginAppodeal_hideBanner, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setUserGender", js_PluginAppodealJS_PluginAppodeal_setUserGender, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
+        JS_FN("getSDKVersion", js_PluginAppodealJS_PluginAppodeal_getSDKVersion, 0, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("disableNetworkForAdType", js_PluginAppodealJS_PluginAppodeal_disableNetworkForAdType, 2, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setUserSmokingAttitude", js_PluginAppodealJS_PluginAppodeal_setUserSmokingAttitude, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
         JS_FN("setUserInterests", js_PluginAppodealJS_PluginAppodeal_setUserInterests, 1, JSPROP_PERMANENT | JSPROP_ENUMERATE),
