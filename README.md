@@ -15,8 +15,14 @@ git clone --depth 1 https://github.com/sdkbox/sdkbox-sample-appodeal.git
 
 # run sample with specified language and platform
 # eg: cpp and ios
+## or
+cd cpp && cocos run -p ios
+
 ./sdkbox-cocos2d-x-binary/run_sample.sh appodeal cpp ios
 # javascript and android
+## or
+cd js && cocos run -p android
+
 ./sdkbox-cocos2d-x-binary/run_sample.sh appodeal js android
 
 # run "download-depends.sh" in sample repo
