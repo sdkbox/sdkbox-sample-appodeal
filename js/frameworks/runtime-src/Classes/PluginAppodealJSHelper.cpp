@@ -20,7 +20,7 @@ public:
 
     std::string _name;
 
-    jsval _paramVal[2];
+    JS::Value _paramVal[2];
     int _paramLen;
 };
 
@@ -161,8 +161,8 @@ public:
 
         ADCallbackJS* cb = new ADCallbackJS();
         cb->_name = "onRewardVideoDidFinish";
-        cb->_paramVal[0] = INT_TO_JSVAL(amount);;
-        cb->_paramVal[1] = std_string_to_jsval(cx, name);
+        cb->_paramVal[0] = JS::Int32Value(amount);;
+        cb->_paramVal[1] = SB_STR_TO_JSVAL(cx, name);
         cb->_paramLen = 2;
         cb->schedule();
         cb->autorelease();
@@ -252,7 +252,7 @@ public:
         cb->autorelease();
     }
 
-    void invokeJS(const char* func, jsval* pVals, int valueSize) {
+    void invokeJS(const char* func, JS::Value *pVals, int valueSize) {
         if (!s_cx) {
             return;
         }
@@ -281,7 +281,7 @@ public:
             if(!JS_GetProperty(cx, obj, func_name, &func_handle)) {
                 return;
             }
-            if(func_handle == JSVAL_VOID) {
+            if(func_handle == JS::NullValue()) {
                 return;
             }
 
@@ -324,7 +324,7 @@ void ADCallbackJS::notityJs(float dt) {
 
 #if defined(MOZJS_MAJOR_VERSION)
 #if MOZJS_MAJOR_VERSION >= 33
-bool js_PluginAppodealJS_PluginAppodeal_setListener(JSContext *cx, uint32_t argc, jsval *vp)
+bool js_PluginAppodealJS_PluginAppodeal_setListener(JSContext *cx, uint32_t argc, JS::Value *vp)
 #else
 bool js_PluginAppodealJS_PluginAppodeal_setListener(JSContext *cx, uint32_t argc, jsval *vp)
 #endif
@@ -345,13 +345,13 @@ JSBool js_PluginAppodealJS_PluginAppodeal_setListener(JSContext *cx, uint32_t ar
 
         JSB_PRECONDITION2(ok, cx, false, "js_PluginAppodealJS_PluginAppodeal_setIAPListener : Error processing arguments");
         AppodealListenerJS* wrapper = new AppodealListenerJS();
-        wrapper->setJSDelegate(args.get(0));
+        wrapper->setJSDelegate(cx, args.get(0));
         sdkbox::PluginAppodeal::setListener(wrapper);
 
         args.rval().setUndefined();
         return true;
     }
-    JS_ReportError(cx, "js_PluginAppodealJS_PluginAppodeal_setIAPListener : wrong number of arguments");
+    JS_ReportErrorUTF8(cx, "js_PluginAppodealJS_PluginAppodeal_setIAPListener : wrong number of arguments");
     return false;
 }
 

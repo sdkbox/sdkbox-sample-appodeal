@@ -180,7 +180,10 @@ namespace sdkbox {
              */
             AppodealAdTypeNonSkippableVideo = 1 <<6,
 
-            AppodealAdTypeAll          = AppodealAdTypeInterstitial | AppodealAdTypeSkippableVideo | AppodealAdTypeBanner | AppodealAdTypeNativeAd | AppodealAdTypeRewardVideo | AppodealAdTypeNonSkippableVideo,
+            /**
+             * AppodealAdTypeNativeAd, AppodealAdTypeMREC is useless on game
+             */
+            AppodealAdTypeAll          = AppodealAdTypeInterstitial | AppodealAdTypeSkippableVideo | AppodealAdTypeBanner | AppodealAdTypeRewardVideo | AppodealAdTypeNonSkippableVideo,
 
             /**
              * deprecated, use AppodealAdTypeSkippableVideo instead
@@ -248,7 +251,7 @@ namespace sdkbox {
         /**
          *  initialize the plugin instance.
          */
-        static bool init();
+        static bool init(AdType adType = AdType::AppodealAdTypeAll);
 
         /**
          * Set listener to listen for appodeal events
@@ -280,6 +283,10 @@ namespace sdkbox {
         static void cacheAd(AdType type);
         static void hideBanner();
         static bool isReadyForShowWithStyle(ShowStyle showStyle);
+
+        static void setSmartBannersEnabled(bool smartBannerEnabled);
+        static void setBannerBackgroundVisible(bool bannerBackgroundVisible);
+        static void setBannerAnimationEnabled(bool bannerAnimationEnabled);
 
         static void setUserVkId(const std::string& vkId);
         static void setUserFacebookId(const std::string& facebookId);
