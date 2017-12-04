@@ -26,14 +26,16 @@ function MainScene:setupTestMenu()
     local menu = cc.Menu:create()
 
     local AppodealShowStyleInterstitial = 1
-    local AppodealShowStyleSkippableVideo = 2
-    local AppodealShowStyleVideoOrInterstitial = 3
     local AppodealShowStyleBannerTop = 4
-    local AppodealShowStyleBannerCenter = 5
-    local AppodealShowStyleBannerBottom = 6
-    local AppodealShowStyleRewardedVideo = 7
-    local AppodealShowStyleVideo = AppodealShowStyleSkippableVideo -- deprecated use AppodealShowStyleSkippableVideo
-    local AppodealShowStyleNonSkippableVideo = AppodealShowStyleRewardedVideo
+    local AppodealShowStyleBannerBottom = 8
+    local AppodealShowStyleRewardedVideo = 16
+    local AppodealShowStyleNonSkippableVideo = 32
+
+    --deprecated
+    local AppodealShowStyleSkippableVideo = AppodealShowStyleInterstitial
+    local AppodealShowStyleVideoOrInterstitial = AppodealShowStyleInterstitial
+    local AppodealShowStyleBannerCenter = AppodealShowStyleBannerBottom
+    local AppodealShowStyleVideo = AppodealShowStyleSkippableVideo
 
     menu:addChild(cc.MenuItemLabel:create(cc.Label:createWithSystemFont("show ad Interstitial", "sans", 24)):onClicked(function()
         print("show ad Interstitial")

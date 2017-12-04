@@ -131,15 +131,16 @@ var HelloWorldLayer = cc.Layer.extend({
         var menu = new cc.Menu();
 
         var AppodealShowStyleInterstitial = 1;
-        var AppodealShowStyleSkippableVideo = 2;
-        var AppodealShowStyleVideoOrInterstitial = 3;
         var AppodealShowStyleBannerTop = 4;
-        var AppodealShowStyleBannerCenter = 5;
-        var AppodealShowStyleBannerBottom = 6;
-        var AppodealShowStyleRewardedVideo = 7;
-        var AppodealShowStyleVideo = AppodealShowStyleSkippableVideo; // deprecated use AppodealShowStyleSkippableVideo
-        var AppodealShowStyleNonSkippableVideo = AppodealShowStyleRewardedVideo;
+        var AppodealShowStyleBannerBottom = 8;
+        var AppodealShowStyleRewardedVideo = 16;
+        var AppodealShowStyleNonSkippableVideo = 32;
 
+        //deprecated
+        var AppodealShowStyleSkippableVideo = AppodealShowStyleInterstitial;
+        var AppodealShowStyleVideoOrInterstitial = AppodealShowStyleInterstitial;
+        var AppodealShowStyleBannerCenter = AppodealShowStyleBannerBottom;
+        var AppodealShowStyleVideo = AppodealShowStyleSkippableVideo;
 
         menu.addChild(new cc.MenuItemLabel(cc.Label.createWithSystemFont("show ad Interstitial", "sans", 28), function() {
             cc.log("show ad Interstitial");
