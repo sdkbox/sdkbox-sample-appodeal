@@ -68,3 +68,6 @@ js/frameworks/runtime-src/proj.android/libs/cheetah-mobile/obj/
 js/frameworks/runtime-src/proj.android/libs/cheetah-mobile/gen/
 js/frameworks/runtime-src/proj.android/libs/cheetah-mobile/bin/
 
+**/proj.android/build/
+**/proj.android-studio/build/
+
