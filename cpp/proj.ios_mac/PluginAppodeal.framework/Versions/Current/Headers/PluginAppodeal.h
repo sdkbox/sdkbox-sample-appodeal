@@ -180,7 +180,10 @@ namespace sdkbox {
              */
             AppodealAdTypeNonSkippableVideo = 1 <<6,
 
-            AppodealAdTypeAll          = AppodealAdTypeInterstitial | AppodealAdTypeSkippableVideo | AppodealAdTypeBanner | AppodealAdTypeNativeAd | AppodealAdTypeRewardVideo | AppodealAdTypeNonSkippableVideo,
+            /**
+             * AppodealAdTypeNativeAd, AppodealAdTypeMREC is useless on game
+             */
+            AppodealAdTypeAll          = AppodealAdTypeInterstitial | AppodealAdTypeSkippableVideo | AppodealAdTypeBanner | AppodealAdTypeRewardVideo | AppodealAdTypeNonSkippableVideo,
 
             /**
              * deprecated, use AppodealAdTypeSkippableVideo instead
@@ -190,22 +193,18 @@ namespace sdkbox {
         } AdType;
 
         typedef enum {
-            AppodealShowStyleInterstitial = 1,
-            AppodealShowStyleSkippableVideo,
-            AppodealShowStyleVideoOrInterstitial,
-            AppodealShowStyleBannerTop,
-            AppodealShowStyleBannerBottom,
-            AppodealShowStyleRewardedVideo,
-            AppodealShowStyleNonSkippableVideo,
+            AppodealShowStyleInterstitial = 1 << 0,
+            AppodealShowStyleBannerTop = 1 << 2,
+            AppodealShowStyleBannerBottom = 1 << 3,
+            AppodealShowStyleRewardedVideo = 1 << 4,
+            AppodealShowStyleNonSkippableVideo = 1 << 5,
 
             /**
              * deprecated
              */
+            AppodealShowStyleSkippableVideo = AppodealShowStyleInterstitial,
+            AppodealShowStyleVideoOrInterstitial = AppodealShowStyleInterstitial,
             AppodealShowStyleBannerCenter = AppodealShowStyleBannerBottom,
-
-            /**
-             * deprecated, use AppodealShowStyleSkippableVideo instead
-             */
             AppodealShowStyleVideo = AppodealShowStyleSkippableVideo,
 
             UNKNOWN_STYLE
@@ -248,7 +247,7 @@ namespace sdkbox {
         /**
          *  initialize the plugin instance.
          */
-        static bool init();
+        static bool init(AdType adType = AdType::AppodealAdTypeAll);
 
         /**
          * Set listener to listen for appodeal events
@@ -280,6 +279,10 @@ namespace sdkbox {
         static void cacheAd(AdType type);
         static void hideBanner();
         static bool isReadyForShowWithStyle(ShowStyle showStyle);
+
+        static void setSmartBannersEnabled(bool smartBannerEnabled);
+        static void setBannerBackgroundVisible(bool bannerBackgroundVisible);
+        static void setBannerAnimationEnabled(bool bannerAnimationEnabled);
 
         static void setUserVkId(const std::string& vkId);
         static void setUserFacebookId(const std::string& facebookId);
