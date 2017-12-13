@@ -18,7 +18,7 @@ if [ -f $ZIP_FILENAME ]; then
 fi
 
 if [ ! -f $ZIP_FILENAME ]; then
-	curl -o $ZIP_FILENAME "https://s3-us-west-1.amazonaws.com/appodeal-ios/1.3.0/Appodeal-1.3.0-fat.zip"
+	curl -C - -o $ZIP_FILENAME "https://s3-us-west-1.amazonaws.com/appodeal-ios/1.3.0/Appodeal-1.3.0-fat.zip"
 fi
 
 if [ -d $TMP_DIR ]; then
