@@ -41,3 +41,14 @@ Memo:
 | +-- lua
 | \-- js
 ~~~
+
+
+
+## Cpp Android Studio
+
+
+
+1. cd cpp && cocos compile -p android
+2. open Android Studio and import cpp project
+3. run in Android Studio
+
